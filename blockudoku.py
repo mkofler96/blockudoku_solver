@@ -204,6 +204,16 @@ class blockudoku:
         logging.info(f"Score: {self.score}")
         return self.score
 
+    def get_current_hand(self):
+        return self.current_hand
+
+
+    def get_possible_moves(self, blck):
+        res = [x for x in range(81) if self.game_field.add_block(blck, x, execute=False)]
+        print(list(res))
+        return list(res)
+
+
 
 class game_field:
     def __init__(self):
